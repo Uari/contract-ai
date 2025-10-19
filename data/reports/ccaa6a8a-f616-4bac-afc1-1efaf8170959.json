@@ -1,0 +1,39 @@
+{
+  "doc_id": "ccaa6a8a-f616-4bac-afc1-1efaf8170959",
+  "summary": {
+    "one_line": "초안 요약(LLM 연결 전)",
+    "bullets": [
+      "- COPYRIGHT LICENSE AGREEMENT \nThis Agreement (“Agreement”) is entered into on ________________ _, (th... [evidence:0]",
+      "- 5. Governing Law and Forum. This Agreement shall be solely and exclusively governed, \nconstrued and ... [evidence:1]",
+      "- EXHIBIT A \nThe “Work” licensed by this Copyright License Agreement is defined as: \n \n_______________... [evidence:2]"
+    ]
+  },
+  "risks": [],
+  "clauses": [
+    {
+      "id": 0,
+      "text": "COPYRIGHT LICENSE AGREEMENT \nThis Agreement (“Agreement”) is entered into on ________________ _, (the “Effective Date”) \nby and between the Open Compute Project Foundation a Delaware corporation (“OCP”) and \n _______________________________ (“Licensor”). \nWHEREAS, Licensor is the owner of and/or has certain rights in or to the works of authorship \nidentified in Exhibit A, which works may include without limitation (a) materials and \ndocumentation submitted by Licensor as part of and/or in support of Licensor’s application for \nOCP’s OCP ACCEPTEDTM or OCP INSPIREDTM certification, (b) Software Contributions and \nOther Contributions [as defined in the Open Compute Foundation Intellectual Property Rights \nManaging Policy (“IP Policy”)] and/or (c) any other works provided in support of a Specification \nContribution (as defined in the IP Policy), provided that such works do not include a Specification \nContribution itself (any and all works of authorship identified in Exhibit A hereinafter the \n“Work”).  \nWHEREAS, OCP desires to copy, distribute, make derivative works of and publish the Work and \nderivate works thereof, including without limitation in one or more OCP publications and/or on \nOCP’s website, and Licensor will benefit from OCP’s use of the Work as described in this \nAgreement. \nNOW THEREFORE, in consideration of the promises in this Agreement, the parties agree as \nfollows: \n1. License. Licensor hereby grants to OCP a non-exclusive, transferable (in accordance with \nSection 6 below), royalty free, fully-paid, perpetual, irrevocable, worldwide license, under \nLicensor’s intellectual property rights in the Work, with the right to sublicense, to use, reproduce, \ncreate derivative works, distribute, and publicly display and perform the Work and derivative \nworks thereof, in whole or in part, as a separate work or as part of a collective work. The \nforegoing will apply to all mediums now known or hereafter existing. \n2. Ownership of the Work / Other Rights Reserved. Except for the foregoing license, as between \nOCP and Licensor, Licensor retains all right, title and interest in and to the Work and all \nintellectual property rights therein. Licensor hereby reserves all rights not expressly granted in this \nAgreement. No additional licenses or rights whatsoever (including without limitation any patent \nlicenses) are granted by implication, exhaustion, estoppel or otherwise. \n3. Representations. Licensor represents to OCP that: (i) Licensor is the sole and exclusive owner \nof the Work and all intellectual property rights therein and Licensor has the right and authority to \ngrant the licenses set forth in this Agreement and (ii) OCP’s exercise of the licenses set forth in \nthis Agreement will not result in any infringement of any third party’s intellectual property, \npublicity, privacy or other rights. Licensor agrees to indemnify and hold OCP harmless from and \nagainst any losses, damages, liabilities, settlement amount, costs and expenses (including \nreasonable attorneys’ fees) incurred by OCP in connection with any breach of the foregoing \nrepresentations. This Section will survive the termination of this Agreement. \n4. Term and Termination. This Agreement will commence on the Effective Date and will \nterminate upon the written agreement of the parties or by written notice by OCP.",
+      "page": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "id": 1,
+      "text": "5. Governing Law and Forum. This Agreement shall be solely and exclusively governed, \nconstrued and enforced in accordance with the laws of the Texas, USA, without reference to \nconflict of laws principles. Any suit, action or proceeding arising from or relating to this \nAgreement must be brought, solely and exclusively, in courts located in Travis County, Texas and \neach party irrevocably consents to the jurisdiction and venue of any such court. \n6. Assignment. OCP may assign this Agreement (a) with the consent of Licensor, not to be \nunreasonably withheld or delayed, or (b) upon notice, but without such consent, in connection \nwith a merger, acquisition, change of control, or sale of substantially all the assets of OCP.  This \nAgreement shall be binding upon and inure to the benefit of the parties and their successors and \npermitted assigns. \n7. Mutual Limits on Liability. Except as set forth below, in no event shall either party be liable to \nthe other party in any manner, under any theory of liability, whether in contract, tort (including \nnegligence), or other theory, for any indirect, consequential, incidental, exemplary, punitive, \nstatutory or special damages, including lost profits, regardless of whether such party was advised \nof or was aware of the possibility of such damages. Except as set forth below, in no event shall the \ntotal, cumulative liability of either party regarding any and all claims and causes of action, under \nany theory of liability, whether in contract, tort (including negligence), or otherwise, exceed One \nThousand Dollars ($1,000). The limitations set forth in this Section will not apply to liability \narising under Section 3 (Representations) above. This Section will survive termination of this \nAgreement. \n \n7. Entire Agreement. This Agreement constitutes the entire agreement between the parties with \nrespect to its subject matter and it supersedes all prior or contemporaneous oral or written \nagreements and representations concerning the subject matter herein. This Agreement may be \namended only in a written document signed by both parties. This Agreement shall not be \ninterpreted or construed against the party preparing it.  \n \n8. Counterparts and Facsimile Signatures. This Agreement may be executed in counterparts all \nof which taken together shall constitute one single agreement between the parties. A facsimile \ntransmission of the executed signature page of this Agreement shall constitute due and proper \nexecution of this Agreement by the applicable party. \n \nThe parties have executed this Agreement by their respective duly authorized representative. \nOPEN COMPUTE PROJECT FOUNDATION \nBy:____________________________________  \nTitle:___________________________________ \nLICENSOR:__________________________  \nBy: _________________________________ \nTitle: _______________________________ \nP.O. Box 82287 \nAustin, Texas 78708  \n \n \n                 \n \nAddress:    ____________________________",
+      "page": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "id": 2,
+      "text": "EXHIBIT A \nThe “Work” licensed by this Copyright License Agreement is defined as: \n \n_______________________________________________________________________________",
+      "page": 0,
+      "start": null,
+      "end": null
+    }
+  ],
+  "meta": {
+    "pages": 3,
+    "file_path": "./data\\uploads\\ccaa6a8a-f616-4bac-afc1-1efaf8170959_Revised-Draft-Copyright-License-Agreement-1-30-18.pdf"
+  }
+}
