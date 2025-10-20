@@ -11,29 +11,39 @@ PAT_HEADER = re.compile(
     re.M | re.X
 )
 
+def _clean_quotes_commas(s: str) -> str:
+    # 라인 앞뒤의 따옴표/쉼표 제거
+    s = s.strip()
+    s = s.strip('",“”‘’')
+    return s
+
+
 def split_into_clauses(pages: List[str]) -> List[str]:
-    """
-    페이지 텍스트를 하나로 합친 뒤 헤더 매칭 위치로 슬라이스.
-    캡처 그룹을 쓰지 않아 None이 끼어들지 않음.
-    """
     text = "\n".join(pages or [])
     if not text.strip():
         return []
 
+    # 1) 정식 헤더로 먼저 시도
     matches = list(PAT_HEADER.finditer(text))
-    if not matches:
-        # 헤더가 전혀 없으면 문단 기준으로 적당히 분할
-        chunks = [p.strip() for p in re.split(r"\n{2,}", text) if len(p.strip()) > 20]
+    chunks: List[str] = []
+
+    if matches:
+        starts = [m.start() for m in matches] + [len(text)]
+        for i in range(len(starts) - 1):
+            chunk = text[starts[i]:starts[i+1]].strip()
+            chunk = "\n".join(_clean_quotes_commas(l) for l in chunk.splitlines())
+            if len(chunk) > 20:
+                chunks.append(chunk)
         return chunks
 
-    # 헤더 시작 위치들 + 문서 끝
-    starts = [m.start() for m in matches]
-    starts.append(len(text))
-
-    chunks: List[str] = []
-    for i in range(len(starts) - 1):
-        chunk = text[starts[i]:starts[i+1]].strip()
-        if len(chunk) > 20:
-            chunks.append(chunk)
-
+    # 2) 실패 시: '숫자.' 패턴 기준으로 줄단위 분할 (줄 시작이 아니어도 허용)
+    rough = re.split(r"\n(?=\s*\"?\s*\d+\.)", text)  # 예:  \n 1.  / \n "1.
+    for r in rough:
+        r = r.strip()
+        if not r:
+            continue
+        lines = [ _clean_quotes_commas(x) for x in r.splitlines() ]
+        cleaned = " ".join(l for l in lines if l)
+        if len(cleaned) > 20:
+            chunks.append(cleaned)
     return chunks

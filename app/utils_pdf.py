@@ -8,6 +8,7 @@ pypdf + OCR 통합 버전
 
 import os
 import re
+import logging
 import unicodedata
 from typing import List, Optional
 
@@ -30,6 +31,8 @@ OCR_LANG = os.getenv("OCR_LANG", "kor+eng")
 
 # pypdf 텍스트 길이 기준 미만이면 OCR 시도
 OCR_TRIGGER_LEN = int(os.getenv("OCR_TRIGGER_LEN", "25"))
+
+logger = logging.getLogger(__name__)
 
 
 # ----------------------------
@@ -98,7 +101,7 @@ def pdf_to_pages(path: str, max_pages: int = 100) -> List[str]:
             reader.decrypt("")  # 빈 비밀번호 시도
         except Exception as e:
             # 암호 해제 실패 시 빈 리스트 반환(상위에서 에러로 처리해도 됨)
-            print(f"[WARN] 암호화 PDF 해제 실패: {e}")
+            logger.warning(f"암호화 PDF 해제 실패: {e}")
             return []
 
     # 1) pypdf 1차 추출
@@ -108,7 +111,7 @@ def pdf_to_pages(path: str, max_pages: int = 100) -> List[str]:
         try:
             txt = reader.pages[i].extract_text() or ""
         except Exception as e:
-            print(f"[WARN] pypdf 추출 실패(page {i+1}): {e}")
+            logger.warning(f"pypdf 추출 실패(page {i+1}): {e}")
             txt = ""
         pages_raw.append(txt)
 
@@ -123,7 +126,7 @@ def pdf_to_pages(path: str, max_pages: int = 100) -> List[str]:
                 if (t or "").strip():
                     pages_raw[idx] = t
         except Exception as e:
-            print(f"[WARN] OCR 수행 실패: {e}")
+            logger.warning(f"OCR 수행 실패: {e}")
 
     # 4) 최종 정규화 + 빈 페이지 제거(필요시)
     pages = []

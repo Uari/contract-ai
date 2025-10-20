@@ -3,7 +3,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from .storage import save_upload, load_report
 from .pipeline import analyze_pdf
-from .models import UploadResponse
+from .schemas import UploadResponse
+from .schemas import Report
 from .storage import UPLOAD_DIR
 from .utils_pdf import pdf_to_pages
 
@@ -15,14 +16,14 @@ app.add_middleware(
     allow_methods=["*"], allow_headers=["*"],
 )
 
-@app.post("/upload", response_model=UploadResponse)
-async def upload(file: UploadFile = File(...)):
+@app.post("/upload", response_model=Report)
+async def upload(file: UploadFile = File(...)) -> Report:
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(400, "PDF만 지원합니다. (스캔본은 OCR 필요)")
     content = await file.read()
     doc_id, path = save_upload(content, file.filename)
-    report = analyze_pdf(doc_id, path)  # 즉시 분석
-    return UploadResponse(doc_id=doc_id, filename=file.filename, pages=report["meta"]["pages"])
+    report = analyze_pdf(doc_id, path)
+    return Report(**report)
 
 @app.get("/report/{doc_id}")
 async def get_report(doc_id: str):

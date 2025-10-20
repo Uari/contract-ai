@@ -1,0 +1,36 @@
+{
+  "doc_id": "76b545bb-eb1c-4983-9c8a-7deb42747e73",
+  "summary": {
+    "one_line": "초안 요약(LLM 연결 전)",
+    "bullets": [
+      "- 3. 임차인은 임대물건의 소수선 비용 일체를 부담한다.... [evidence:0]"
+    ]
+  },
+  "risks": [
+    {
+      "type": "llm_flag",
+      "severity": "watch",
+      "rule_hits": [
+        "llm_fallback"
+      ],
+      "llm_verdict": "pending",
+      "reason": "소수선 비용 부담 범위가 불명확하여 임차인에게 과도한 부담을 전가할 수 있습니다.",
+      "evidence_ids": [
+        0
+      ]
+    }
+  ],
+  "clauses": [
+    {
+      "id": 0,
+      "text": "3. 임차인은 임대물건의 소수선 비용 일체를 부담한다.",
+      "page": 0,
+      "start": null,
+      "end": null
+    }
+  ],
+  "meta": {
+    "pages": 1,
+    "file_path": "./data\\uploads\\76b545bb-eb1c-4983-9c8a-7deb42747e73_리스크계약소 (1).pdf"
+  }
+}
